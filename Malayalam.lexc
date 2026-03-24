@@ -1,1 +1,33 @@
 rules go here:
+! Define special multi-character symbols (Tags)
+Multichar_Symbols
+    +N      ! Noun
+    +V      ! Verb
+    +Sg     ! Singular
+    +Pl     ! Plural
+    +Nom    ! Nominative
+    +Gen    ! Genitive
+
+! The Root lexicon is the entry point
+LEXICON Root
+    Nouns ;
+    Verbs ;
+
+! Define Noun stems
+LEXICON Nouns
+    cat     N_Infl ;
+    dog     N_Infl ;
+    sky     N_Infl ;  ! Will need a rule for y -> ie later
+
+! Define Verb stems
+LEXICON Verbs
+    play    V_Infl ;
+
+! Define Noun Inflections
+LEXICON N_Infl
+    +N+Sg:0     # ;   ! 0 means no change/empty string
+    +N+Pl:^s    # ;   ! ^ is a marker we use for boundaries
+
+! Define Verb Inflections
+LEXICON V_Infl
+    +V+Pres:^s  # ;
