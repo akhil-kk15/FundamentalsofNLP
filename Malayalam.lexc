@@ -1,4 +1,3 @@
-rules go here:
 ! Define special multi-character symbols (Tags)
 Multichar_Symbols
     +N      ! Noun
@@ -7,27 +6,34 @@ Multichar_Symbols
     +Pl     ! Plural
     +Nom    ! Nominative
     +Gen    ! Genitive
+    +Pres   ! Present tense
 
 ! The Root lexicon is the entry point
 LEXICON Root
     Nouns ;
     Verbs ;
 
-! Define Noun stems
+! Defined Noun stems (Malayalam words written in English letters)
 LEXICON Nouns
-    cat     N_Infl ;
-    dog     N_Infl ;
-    sky     N_Infl ;  ! Will need a rule for y -> ie later
+    kutti      N_Infl ;   ! child
+    maram      N_Infl ;   ! tree
+    pustakam   N_Infl ;   ! book
+    veedu      N_Infl ;   ! house
 
 ! Define Verb stems
 LEXICON Verbs
-    play    V_Infl ;
+    kali       V_Infl ;   ! play
+    paadi      V_Infl ;   ! sing
+    nadakk     V_Infl ;   ! walk
+    vaayikk    V_Infl ;   ! read
 
 ! Define Noun Inflections
 LEXICON N_Infl
-    +N+Sg:0     # ;   ! 0 means no change/empty string
-    +N+Pl:^s    # ;   ! ^ is a marker we use for boundaries
+    +N+Sg+Nom:0        # ;      ! base form
+    +N+Sg+Gen:^inte    # ;      ! genitive marker
+    +N+Pl+Nom:^kal     # ;      ! plural marker
+    +N+Pl+Gen:^kalude  # ;      ! plural genitive
 
 ! Define Verb Inflections
 LEXICON V_Infl
-    +V+Pres:^s  # ;
+    +V+Pres:^unnu      # ;      ! present tense marker
