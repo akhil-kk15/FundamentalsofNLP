@@ -1,39 +1,53 @@
-! Define special multi-character symbols (Tags)
+! Malayalam Morphology Lexicon
 Multichar_Symbols
-    +N      ! Noun
-    +V      ! Verb
-    +Sg     ! Singular
-    +Pl     ! Plural
-    +Nom    ! Nominative
-    +Gen    ! Genitive
-    +Pres   ! Present tense
+    +N        ! Noun
+    +Adj      ! Adjective
+    +V        ! Verb
+    +Sg       ! Singular
+    +Pl       ! Plural
+    +Nom      ! Nominative
+    +Gen      ! Genitive
+    +Pres     ! Present tense
+    +Pred     ! Predicative form (adjective)
+    +Comp     ! Comparative form (adjective)
 
-! The Root lexicon is the entry point
 LEXICON Root
     Nouns ;
+    Adjectives ;
     Verbs ;
 
-! Defined Noun stems (Malayalam words written in English letters)
+! --- 4 noun stems ---
 LEXICON Nouns
     kutti      N_Infl ;   ! child
     maram      N_Infl ;   ! tree
     pustakam   N_Infl ;   ! book
     veedu      N_Infl ;   ! house
 
-! Define Verb stems
+! --- 3 adjective stems ---
+LEXICON Adjectives
+    nalla      Adj_Infl ;   ! good
+    valiya     Adj_Infl ;   ! big
+    cheriya    Adj_Infl ;   ! small
+
+! --- 4 verb stems ---
 LEXICON Verbs
     kali       V_Infl ;   ! play
     paadi      V_Infl ;   ! sing
     nadakk     V_Infl ;   ! walk
     vaayikk    V_Infl ;   ! read
 
-! Define Noun Inflections
+! --- Noun inflection patterns ---
 LEXICON N_Infl
-    +N+Sg+Nom:0        # ;      ! base form
-    +N+Sg+Gen:^inte    # ;      ! genitive marker
-    +N+Pl+Nom:^kal     # ;      ! plural marker
-    +N+Pl+Gen:^kalude  # ;      ! plural genitive
+    +N+Sg+Nom:0          # ;   ! base form:        kutti
+    +N+Sg+Gen:^inte      # ;   ! singular genitive: kuttiyinte
+    +N+Pl+Nom:^kal       # ;   ! plural:            kuttikal
+    +N+Pl+Gen:^kalude    # ;   ! plural genitive:   kuttikalude
 
-! Define Verb Inflections
+! --- Adjective inflection patterns ---
+LEXICON Adj_Infl
+    +Adj+Pred:^aanu      # ;   ! predicative: nallaanu (is good)
+    +Adj+Comp:^kkaal     # ;   ! comparative: nallakkaal (more good)
+
+! --- Verb inflection patterns ---
 LEXICON V_Infl
-    +V+Pres:^unnu      # ;      ! present tense marker
+    +V+Pres:^unnu        # ;   ! present: kaliyunnu (is playing)
