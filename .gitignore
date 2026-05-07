@@ -1,0 +1,18 @@
+# Ignore everything by default
+*
+*/
+
+# Keep tracked files and Akhil_KK_text_classification.ipynb
+!.gitignore
+!HFST_mal.ipynb
+!Malayalam.lexc
+!textClassification/
+!textClassification/textClassification.ipynb
+!textClassification/Akhil_KK_text_classification.ipynb
+!textClassification/data/
+!textClassification/data/full_dataset/
+!textClassification/data/full_dataset/goemotions_1.tsv
+!textClassification/data/full_dataset/goemotions_2.tsv
+!textClassification/data/full_dataset/goemotions_3.tsv
+
+

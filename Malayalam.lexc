@@ -8,6 +8,8 @@ Multichar_Symbols
     +Nom      ! Nominative
     +Gen      ! Genitive
     +Pres     ! Present tense
+    +Past     ! Past tense
+    +Fut      ! Future tense
     +Pred     ! Predicative form (adjective)
     +Comp     ! Comparative form (adjective)
 
@@ -45,9 +47,12 @@ LEXICON N_Infl
 
 ! --- Adjective inflection patterns ---
 LEXICON Adj_Infl
+    +Adj+Nom:0           # ;   ! base form: nalla
     +Adj+Pred:^aanu      # ;   ! predicative: nallaanu (is good)
     +Adj+Comp:^kkaal     # ;   ! comparative: nallakkaal (more good)
 
 ! --- Verb inflection patterns ---
 LEXICON V_Infl
     +V+Pres:^unnu        # ;   ! present: kaliyunnu (is playing)
+    +V+Past:^thu         # ;   ! past: kalithu
+    +V+Fut:^um           # ;   ! future: kaliyum
